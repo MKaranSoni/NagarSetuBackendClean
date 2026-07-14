@@ -39,7 +39,13 @@ public class SecurityConfig {
                         // 🔓 Public auth APIs
                         .requestMatchers("/api/auth/**").permitAll()
 
+                        .requestMatchers("/hello").permitAll()
+
+                        .requestMatchers("/me").permitAll()
+
                         .requestMatchers("/api/aqi/**").permitAll()
+
+                        .requestMatchers("/api/test/**").permitAll()
 
                         // 🔓 Swagger
                         .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
@@ -75,10 +81,10 @@ public class SecurityConfig {
 
         // 🔥 Frontend URL (React Vite)
         configuration.setAllowedOrigins(List.of(
-                "http://localhost:5173",
-                "http://localhost:5174"
-
-        ));
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://nagarsetuseva.vercel.app"
+));
 
         // 🔥 IMPORTANT: allow headers used in JWT + JSON
         configuration.setAllowedHeaders(List.of(
