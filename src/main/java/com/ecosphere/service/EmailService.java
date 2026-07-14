@@ -15,11 +15,22 @@ public class EmailService {
 
     public void sendOtp(String email, String otp) {
 
+    try {
+        System.out.println("Sending email to: " + email);
+
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(email);
         message.setSubject("OTP Verification");
         message.setText("Your OTP is: " + otp);
 
         mailSender.send(message);
+
+        System.out.println("EMAIL SENT SUCCESSFULLY");
+
+    } catch (Exception e) {
+        System.out.println("EMAIL FAILED");
+        e.printStackTrace();
+        throw e;
     }
+}
 }
