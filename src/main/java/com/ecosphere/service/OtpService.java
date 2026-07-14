@@ -66,7 +66,9 @@ public class OtpService {
         otpRepository.save(record);
 
         // 3. send email
+        System.out.println("OTP saved successfully");
         emailService.sendOtp(email, otp);
+        System.out.println("Email sent successfully");
     }
     public void verifyOtpAndRegister(VerifyOtpRequest request) {
         System.out.println("DEBUG: email=" + request.getEmail());

@@ -41,6 +41,8 @@ public class SecurityConfig {
 
                         .requestMatchers("/hello").permitAll()
 
+                        .requestMatchers("/", "/hello").permitAll()
+
                         .requestMatchers("/me").permitAll()
 
                         .requestMatchers("/api/aqi/**").permitAll()
