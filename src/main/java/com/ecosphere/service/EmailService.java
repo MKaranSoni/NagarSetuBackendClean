@@ -16,7 +16,6 @@ public class EmailService {
     public void sendOtp(String email, String otp) {
 
     try {
-        System.out.println("Sending email to: " + email);
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(email);
@@ -25,12 +24,14 @@ public class EmailService {
 
         mailSender.send(message);
 
-        System.out.println("EMAIL SENT SUCCESSFULLY");
+        System.out.println("MAIL SUCCESS");
 
     } catch (Exception e) {
-        System.out.println("EMAIL FAILED");
+
+        System.out.println("MAIL FAILED");
         e.printStackTrace();
-        throw e;
+
+        throw new RuntimeException(e);
     }
 }
 }
