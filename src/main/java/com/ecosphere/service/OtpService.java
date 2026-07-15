@@ -67,7 +67,7 @@ public class OtpService {
 
         // 3. send email
         System.out.println("OTP saved successfully");
-        //emailService.sendOtp(email, otp);
+        emailService.sendOtp(email, otp);
         System.out.println("Email removed");
     }
     public void verifyOtpAndRegister(VerifyOtpRequest request) {
